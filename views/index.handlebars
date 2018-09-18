@@ -1,9 +1,31 @@
-<h1>Burgers!</h1>
+<div class='title container text-center'>
+    <span class='text-center mx-auto header rounded'>🍔Hank's Burgers!🍔</span>
+</div>
 
-<h2>Burgers to be eaten!</h2>
-
-<ul>
-  {{#each burgers}}
-   <li> {{this.burger_name}} </li>
-  {{/each}}
-</ul>
+<div class="container col-md-10 mx-auto">
+    <div class="row burgers">
+        <div class="col-md-4 text-center burgers-ready">
+            <h2>Burgers to be eaten!</h2>
+            <div>
+                {{#each burgers}}
+                <p> {{this.burger_name}} </p>
+                {{/each}}
+            </div>
+        </div>
+        <div class="col-md-4 text-center burgers-munched">
+            <h2>Create a burger!</h2>
+            <div>
+                
+            </div>
+        </div>
+        <div class="col-md-4 text-center burgers-munched">
+            <h2>Burgers munched!</h2>
+            <div>
+                {{#each burgers}}
+                <p> {{this.burger_name}} </p>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
+</div>
