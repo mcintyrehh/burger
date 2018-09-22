@@ -67,13 +67,10 @@ var orm = {
         cb(result);
     })
   },
-  updateOne: function(tableInput, objectColumnVals, condition, cb) {
+  updateOne: function(tableInput, condition, cb) {
       var queryString = "UPDATE " + tableInput;
-      queryString += " SET ";
-      queryString += objToSql(objectColumnVals);
-      queryString += " WHERE "
+      queryString += " SET devoured = 1 WHERE id = ";
       queryString += condition;
-
       console.log(queryString);
       connection.query(queryString, function(err, result) {
           if (err) throw err;

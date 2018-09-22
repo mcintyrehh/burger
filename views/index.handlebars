@@ -8,7 +8,9 @@
             <h2 class='mini-header'>Burgers to be eaten!</h2>
             <div>
                 {{#each burgers}}
-                <p> {{this.burger_name}} </p>
+                {{#unless devoured}}
+                <button type="button" class="btn btn-outline-light m-1 eat-button" id={{this.id}}>{{this.burger_name}}</button>
+                {{/unless}}
                 {{/each}}
             </div>
         </div>
@@ -16,16 +18,23 @@
             <h2 class='mini-header'>Create a burger!</h2>
             <div class="user-input">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Burger McBurger">
+                    <input type="text" class="form-control" id="burgerName" placeholder="Burger McBurger">
                 </div>
-                <button type="button" class="btn btn-dark mx-auto">Craft Burger</button>
+                <button type="button" class="btn btn-dark mx-auto" id="newBurger">Craft Burger</button>
             </div>
         </div>
         <div class="col-md-4 text-center burgers-munched">
             <h2 class='mini-header'>Burgers munched!</h2>
             <div>
                 {{#each burgers}}
-                <p> {{this.burger_name}} </p>
+                {{#if devoured}}
+                    <span>
+                        <button class="btn btn-outline-light m-1 dropdown-toggle" type="button" data-toggle="dropdown">{{this.burger_name}}</button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" data-name='{{this.burger_name}}' href="#">Cook Another!</a>
+                        </div>
+                    </span>
+                {{/if}}
                 {{/each}}
             </div>
         </div>
