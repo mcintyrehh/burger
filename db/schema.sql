@@ -4,7 +4,6 @@ USE burgers_db;
 CREATE TABLE burgers (
     id int AUTO_INCREMENT NOT NULL,
     burger_name TEXT,
-    devoured BIT,
+    devoured INT,
     PRIMARY KEY (id)
 );
-
